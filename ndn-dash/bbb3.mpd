@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MPD type="static" availabilityStartTime="2016-04-07T08:10:56Z" mediaPresentationDuration="PT1M" minBufferTime="PT10S" timeShiftBufferDepth="PT30S" xmlns="urn:mpeg:dash:schema:mpd:2011" profiles="urn:mpeg:dash:profile:isoff-main:2011">
+  <BaseURL>http://jacques</BaseURL>
+  <Period start="PT0S">
+
+	<AdaptationSet mimeType="audio/mp4" codecs="mp42" streamName="stereo">
+      <Representation audioSamplingRate="48000" id="256kbps" bandwidth="256000">
+		<SegmentList timescale="24000" duration="90125">
+			<Initialization sourceURL="jackodio/init.mp4"/>
+			<SegmentURL media="jackodio/segment_0.m4s"/>
+			<SegmentURL media="jackodio/segment_1.m4s"/>
+			<SegmentURL media="jackodio/segment_2.m4s"/>
+			<SegmentURL media="jackodio/segment_3.m4s"/>
+			<SegmentURL media="jackodio/segment_4.m4s"/>
+			<SegmentURL media="jackodio/segment_5.m4s"/>
+			<SegmentURL media="jackodio/segment_6.m4s"/>
+			<SegmentURL media="jackodio/segment_7.m4s"/>
+			<SegmentURL media="jackodio/segment_8.m4s"/>
+			<SegmentURL media="jackodio/segment_9.m4s"/>
+			<SegmentURL media="jackodio/segment_10.m4s"/>
+			<SegmentURL media="jackodio/segment_11.m4s"/>
+			<SegmentURL media="jackodio/segment_12.m4s"/>
+			<SegmentURL media="jackodio/segment_13.m4s"/>
+			<SegmentURL media="jackodio/segment_14.m4s"/>
+		</SegmentList>
+      </Representation>
+    </AdaptationSet>
+  </Period>
+</MPD>

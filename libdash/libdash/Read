@@ -1,0 +1,11 @@
+qtsampleplayer/libdashframework/Input/NDNConnection.cpp~:    return conn->NDNBlock();
+qtsampleplayer/libdashframework/Input/CCNConnection.cpp~:    return conn->NDNBlock();
+qtsampleplayer/libdashframework/Input/NDNConnection.cpp:    return conn->NDNBlock();
+qtsampleplayer/libdashframework/Input/MediaObject.cpp~:    if(!conn->Init(this->segment))
+qtsampleplayer/libdashframework/Input/MediaObject.cpp~:    if(!conn->Schedule(this->segment))
+qtsampleplayer/libdashframework/Input/MediaObject.cpp~:    if(!conn->Init(this->segment))
+qtsampleplayer/libdashframework/Input/MediaObject.cpp~:    if(!conn->Schedule(this->segment))
+qtsampleplayer/libdashframework/Input/MediaObject.cpp:    if(!conn->Init(this->segment))
+qtsampleplayer/libdashframework/Input/MediaObject.cpp:    if(!conn->Schedule(this->segment))
+qtsampleplayer/libdashframework/Input/MediaObject.cpp:    if(!conn->Init(this->segment))
+qtsampleplayer/libdashframework/Input/MediaObject.cpp:    if(!conn->Schedule(this->segment))

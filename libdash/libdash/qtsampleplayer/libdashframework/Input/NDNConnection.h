@@ -1,0 +1,226 @@
+/*
+ * HTTPConnection.h
+ *****************************************************************************
+ * Copyright (C) 2012, bitmovin Softwareentwicklung OG, All Rights Reserved
+ *
+ * Email: libdash-dev@vicky.bitmovin.net
+ *
+ * This source code and its use and distribution, is subject to the terms
+ * and conditions of the applicable license agreement.
+ *****************************************************************************/
+
+#ifndef NDNCONNECTION_H_
+#define NDNCONNECTION_H_
+
+#include "../libdash/source/portable/Networking.h"
+#include "IConnection.h"
+
+#include <string>
+#include <stdint.h>
+#include <iostream>
+#include <sstream>
+#include <chrono>
+#include <inttypes.h>
+#include <stdlib.h>
+#include <stdarg.h>
+
+/*
+extern "C" {
+#include <ccn/fetch.h>
+#include <ccn/ccn.h>
+#include <ccn/charbuf.h>
+#include <ccn/uri.h>
+#include <ccn/header.h>
+}
+*/
+
+#include <ndn-cxx/face.hpp>
+#include <ndn-cxx/security/key-chain.hpp>
+#include <ndn-cxx/util/command-interest-generator.hpp>
+
+#define NDN_DEFAULT_TIMEOUT    -1
+#define NDN_VERSION_TIMEOUT    400
+#define NDN_HEADER_TIMEOUT     400
+#define NDN_CHUNK_SIZE         4096
+#define NDN_MAX_TRYS   3
+#define NDN_FETCH_MAX_BUFFERS  8
+#define BLOCKSIZE              32768
+#define PEEKBUFFER             4096
+#define DEFAULT_LIFETIME 250
+#define RETRY_TIMEOUT 25
+
+  typedef struct {
+    volatile uint64_t i_pos;
+    volatile int eof;
+    //uint64_t i_size;
+    //dash::network::IChunk * chunk;
+
+    //int i_lifetime;
+    //int i_retrytimeout;
+
+    //void * _p_access;
+
+    //log_t p_log;
+    //log_64_t p_log_64;
+    //log_double_t p_log_double;
+
+    //void * plugin;
+    //char * name;
+
+  } ndn_cxx_libdash_data_t;
+
+  typedef struct {
+    uint8_t      	data[10000];
+    uint64_t 		start_offset;
+    uint64_t    	size;
+  } buffer_t;
+
+/*
+using ndn::Name;
+using ndn::Interest;
+using ndn::Data;
+using ndn::Face;
+using ndn::Block;
+*/
+
+namespace libdash
+{
+    namespace framework
+    {
+        namespace input
+        {/*
+            class NDNConnection : public dash::network::IConnection
+            {
+                public:
+                    NDNConnection          ();
+                    virtual ~NDNConnection ();
+
+                    virtual bool    Init        (dash::network::IChunk *chunk);
+                    virtual int     Read        (uint8_t *data, size_t len, dash::network::IChunk *chunk);
+                    virtual int     Peek        (uint8_t *data, size_t len, dash::network::IChunk *chunk);
+                    virtual bool    Schedule    (dash::network::IChunk *chunk);
+                    */
+                    /*
+                     *  IDASHMetrics
+                     */
+        /*
+                    const std::vector<dash::metrics::ITCPConnection *>&     GetTCPConnectionList    () const;
+                    const std::vector<dash::metrics::IHTTPTransaction *>&   GetHTTPTransactionList  () const;
+
+                protected:
+                    struct ccn                  *ccnConn;
+                    struct ccn_fetch            *cf;
+                    struct ccn_fetch_stream     *fs;
+                    struct ccn_charbuf          *i_name, *p_name;
+                    struct ccn_charbuf          *interest_template;
+                    int                         ccn_get_timeout;
+                    bool                        b_last;
+                    int                         sum;
+                    uint64_t                    i_pos;
+                    bool                        isConn;
+                    uint8_t                     *peekBuffer;
+                    size_t                      peekBufferLen;
+                    int                         contentLength;
+                    bool                        isInit;
+                    bool                        isScheduled;
+
+                    std::vector<dash::metrics::ITCPConnection *>    tcpConnections;
+                    std::vector<dash::metrics::IHTTPTransaction *>  httpTransactions;
+
+                    virtual std::string PrepareRequest  (dash::network::IChunk *chunk);
+                    virtual bool        SendData        (std::string data);
+                    virtual bool        Connect   ();
+            };
+            */
+			class NDNConnection : public dash::network::IConnection
+			{
+			  public:
+				NDNConnection();
+				~NDNConnection();
+
+			  public:
+				/*
+				int NDNOpen();
+				buffer_t * NDNBlock();
+			#if (VLCPLUGINVER < 10100)
+				int NDNSeek(int64_t i_pos);
+			#else
+				int NDNSeek(uint64_t i_pos);
+			#endif
+				void NDNClose();
+				*/
+
+				//void L(std::string event, uint64_t id);
+
+				//void doFetch();
+
+				//void onData(const Interest& interest, const Data& data);
+				//void onTimeout(const Interest& interest);
+
+				virtual bool    Init        (dash::network::IChunk *chunk);
+				virtual int     Read        (uint8_t *data, size_t len, dash::network::IChunk *chunk);
+                    		virtual int     Peek        (uint8_t *data, size_t len, dash::network::IChunk *chunk);
+                    		virtual bool    Schedule    (dash::network::IChunk *chunk);
+				virtual void doFetch();
+				virtual void onData(const ndn::Interest& interest, const ndn::Data& data);
+				virtual void onTimeout(const ndn::Interest& interest);
+				//virtual buffer_t * NDNBlock();
+
+		                /*
+		                 *  IDASHMetrics
+		                 */
+		                const std::vector<dash::metrics::ITCPConnection *>&     GetTCPConnectionList    () const;
+		                const std::vector<dash::metrics::IHTTPTransaction *>&   GetHTTPTransactionList  () const;
+
+			  private:
+				volatile uint64_t i_chunksize;        /**< size of NDN ContentObject data blocks */
+				int i_lifetime;
+
+				int i_retrytimeout;
+
+				bool m_live;
+				std::chrono::time_point<std::chrono::system_clock> m_last_fetch;
+			//#if (VLCPLUGINVER >= 20200)
+				uint64_t i_size;        /**< size of input if known */
+			//#endif
+				int i_missed_co;        /**< number of content objects we missed in NDNBlock */
+
+				buffer_t m_buffer;
+				std::chrono::time_point<std::chrono::system_clock> m_start_time;
+				ndn_cxx_libdash_data_t  m_data;
+				std::string      		m_name;
+				ndn::Name      		m_recv_name;
+				ndn::Face 		m_face;
+				volatile int 	m_first;
+				int 		m_cid_timing_out;
+				int 		m_timeout_counter;
+
+		                //struct ccn                  *ccnConn;
+		                //struct ccn_fetch            *cf;
+		                //struct ccn_fetch_stream     *fs;
+		                //struct ccn_charbuf          *i_name, *p_name;
+		                //struct ccn_charbuf          *interest_template;
+		                //int                         ndn_get_timeout;
+		                bool                        b_last;
+		                //int                         sum;
+		                //uint64_t                    i_pos;
+		                bool                        isConn;
+		                uint8_t                     *peekBuffer;
+		                size_t                      peekBufferLen;
+		                //int                         contentLength;
+		                bool                        isInit;
+		                bool                        isScheduled;
+
+                    		std::vector<dash::metrics::ITCPConnection *>    tcpConnections;
+                    		std::vector<dash::metrics::IHTTPTransaction *>  httpTransactions;
+
+                    		//virtual std::string PrepareRequest  (dash::network::IChunk *chunk);
+                    		//virtual bool        SendData        (std::string data);
+                    		//virtual bool        Connect   ();
+
+			};
+        }
+    }
+}
+
+#endif /* NDNCONNECTION_H_ */

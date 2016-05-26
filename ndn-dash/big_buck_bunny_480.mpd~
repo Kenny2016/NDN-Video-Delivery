@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MPD type="static" availabilityStartTime="2016-04-07T08:10:56Z" mediaPresentationDuration="PT1M" minBufferTime="PT10S" timeShiftBufferDepth="PT30S" xmlns="urn:mpeg:dash:schema:mpd:2011" profiles="urn:mpeg:dash:profile:isoff-main:2011">
+  <BaseURL>http://media</BaseURL>
+  <Period start="PT0S">
+
+    <AdaptationSet mimeType="video/mp4" codecs="avc1.42c00d">
+      <Representation width="1280" height="544" frameRate="24" id="544p 10000kbps" bandwidth="10000000">
+		<SegmentList timescale="24000" duration="90125">
+			<Initialization sourceURL="video_0_10000000/dash/init.mp4"/>
+			<SegmentURL media="video_0_10000000/dash/segment_0.m4s"/>
+			<SegmentURL media="video_0_10000000/dash/segment_1.m4s"/>
+			<SegmentURL media="video_0_10000000/dash/segment_2.m4s"/>
+			<SegmentURL media="video_0_10000000/dash/segment_3.m4s"/>
+			<SegmentURL media="video_0_10000000/dash/segment_4.m4s"/>
+			<SegmentURL media="video_0_10000000/dash/segment_5.m4s"/>
+			<SegmentURL media="video_0_10000000/dash/segment_6.m4s"/>
+			<SegmentURL media="video_0_10000000/dash/segment_7.m4s"/>
+			<SegmentURL media="video_0_10000000/dash/segment_8.m4s"/>
+			<SegmentURL media="video_0_10000000/dash/segment_9.m4s"/>
+			<SegmentURL media="video_0_10000000/dash/segment_10.m4s"/>
+			<SegmentURL media="video_0_10000000/dash/segment_11.m4s"/>
+			<SegmentURL media="video_0_10000000/dash/segment_12.m4s"/>
+			<SegmentURL media="video_0_10000000/dash/segment_13.m4s"/>
+			<SegmentURL media="video_0_10000000/dash/segment_14.m4s"/>
+			<SegmentURL media="video_0_10000000/dash/segment_15.m4s"/>
+		</SegmentList>
+      </Representation>
+    </AdaptationSet>
+   <AdaptationSet mimeType="audio/mp4" codecs="mp4a.40.2" streamName="stereo">
+      <Representation audioSamplingRate="48000" id="256kbps" bandwidth="256000">
+		<SegmentList timescale="24000" duration="90125">
+			<Initialization sourceURL="audio_0_256000/dash/init.mp4"/>
+			<SegmentURL media="audio_0_256000/dash/segment_0.m4s"/>
+			<SegmentURL media="audio_0_256000/dash/segment_1.m4s"/>
+			<SegmentURL media="audio_0_256000/dash/segment_2.m4s"/>
+			<SegmentURL media="audio_0_256000/dash/segment_3.m4s"/>
+			<SegmentURL media="audio_0_256000/dash/segment_4.m4s"/>
+			<SegmentURL media="audio_0_256000/dash/segment_5.m4s"/>
+			<SegmentURL media="audio_0_256000/dash/segment_6.m4s"/>
+			<SegmentURL media="audio_0_256000/dash/segment_7.m4s"/>
+			<SegmentURL media="audio_0_256000/dash/segment_8.m4s"/>
+			<SegmentURL media="audio_0_256000/dash/segment_9.m4s"/>
+			<SegmentURL media="audio_0_256000/dash/segment_10.m4s"/>
+			<SegmentURL media="audio_0_256000/dash/segment_11.m4s"/>
+			<SegmentURL media="audio_0_256000/dash/segment_12.m4s"/>
+			<SegmentURL media="audio_0_256000/dash/segment_13.m4s"/>
+			<SegmentURL media="audio_0_256000/dash/segment_14.m4s"/>
+		</SegmentList>
+      </Representation>
+    </AdaptationSet>
+
+
+  </Period>
+</MPD>

@@ -1,0 +1,251 @@
+/*
+ * NDNConnection.cpp
+ *****************************************************************************
+ * NDNx input module for libdash
+ *
+ * Author: Qian Li <qian.li@irt-systemx.fr>
+ *
+ * Copyright (C) 2016 IRT SystemX
+ *
+ * Based on NDNx input module for VLC by Jordan Augé
+ * Portions Copyright (C) 2015 Cisco Systems
+ * Based on CCNx input module for libdash by
+ * Copyright (C) 2012, bitmovin Softwareentwicklung OG, All Rights Reserved
+ * Based on the NDNx input module by UCLA
+ * Portions Copyright (C) 2013 Regents of the University of California.
+ *
+ * Email: libdash-dev@vicky.bitmovin.net
+ *
+ * This source code and its use and distribution, is subject to the terms
+ * and conditions of the applicable license agreement.
+ * This work is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License version 2 as published by the
+ * Free Software Foundation.
+ *****************************************************************************/
+
+#include "NDNConnection.h"
+#include <inttypes.h>
+#include <time.h>
+#include <limits.h>
+#include <errno.h>
+
+#include <ndn-cxx/face.hpp>
+#include <ndn-cxx/security/key-chain.hpp>
+#include <ndn-cxx/util/command-interest-generator.hpp>
+
+#include <boost/exception/diagnostic_information.hpp>
+
+//logging purpose
+#include <chrono>
+#include <stdarg.h>
+
+/*****************************************************************************
+ * Module descriptor
+ *****************************************************************************/
+
+using namespace libdash::framework::input;
+
+using namespace dash;
+using namespace dash::network;
+using namespace dash::metrics;
+
+using std::bind;
+using std::placeholders::_1;
+using std::placeholders::_2;
+
+using duration_in_seconds = std::chrono::duration<double, std::ratio<1, 1> >;
+
+//#define NOW() do { double now = std::chrono::duration_cast<duration_in_seconds>(std::chrono::system_clock::now() - m_start_time).count(); } while(0)
+
+NDNConnection::NDNConnection() :
+			m_recv_name(std::string()),
+			m_first(1),
+//			m_cid_timing_out(0),
+//			m_timeout_counter(0),
+			m_isFinished(false),
+			cumulativeBytesReceived(0)
+{
+    i_chunksize = -1;
+    i_missed_co = 0;
+    i_lifetime = DEFAULT_LIFETIME;
+    Debug("NDN class created\n");
+//    i_retrytimeout = RETRY_TIMEOUT;
+}
+
+
+NDNConnection::~NDNConnection() {
+}
+
+void NDNConnection::Init(IChunk *chunk) {
+	Debug("NDN Connection:	STARTING\n");
+    m_first = 1;
+    m_buffer.size = 0;
+    sizeDownloaded = 0;
+    m_name = "ndn:/" + chunk->Host() + chunk->Path();
+   	m_nextSeg = 0;
+    m_isFinished = false;
+    Debug("NDN_Connection:\tINTIATED_to_name %s\n", m_name.c_str());
+    L("NDN_Connection:\tSTARTING DOWNLOAD %s\n", m_name.c_str());
+}
+
+int             NDNConnection::Peek(uint8_t *data, size_t len, IChunk *chunk) {
+    return -1;
+}
+
+
+void NDNConnection::doFetch() {
+    // double now = std::chrono::duration_cast<duration_in_seconds>(std::chrono::system_clock::now() - m_start_time).count();
+
+    ndn::Name name(m_name);
+
+    if (m_first == 0)
+    {
+        name.append(m_recv_name[-2]).appendSegment(m_nextSeg);
+    }
+
+    ndn::Interest interest(name, ndn::time::milliseconds(i_lifetime));
+
+    Debug("fetching %s\n", m_name.c_str());
+    if (m_first == 1)
+    {
+    	m_start_time = std::chrono::system_clock::now();
+        interest.setMustBeFresh(true);
+#ifdef FRESH
+        } else {
+    interest.setMustBeFresh(true);
+#endif // FRESH
+    }
+
+   // m_last_fetch = std::chrono::system_clock::now();
+
+    m_face.expressInterest(interest, bind(&NDNConnection::onData, this, _1, _2),
+                           bind(&NDNConnection::onTimeout, this, _1));
+
+}
+
+
+/*****************************************************************************
+ * CALLBACKS
+ *****************************************************************************/
+
+void NDNConnection::onData(const ndn::Interest &interest, const ndn::Data &data) {
+
+	m_nextSeg++;
+    if (m_isFinished)
+    {
+    	return;
+    }
+
+ //   double now = std::chrono::duration_cast<duration_in_seconds>(std::chrono::system_clock::now() - m_start_time).count();
+
+    if (m_first == 1) {
+       m_recv_name = data.getName();
+        i_chunksize = data.getContent().value_size();
+
+        m_first = 0;
+ //       m_cid_timing_out = 0;
+ //       m_timeout_counter = 0;
+    }
+
+    const ndn::Block &content = data.getContent();
+
+    memcpy(m_buffer.data, reinterpret_cast<const char *>(content.value()), content.value_size());
+    m_buffer.size = content.value_size();
+    m_buffer.start_offset = 0;
+
+ /*   if(data.getName().toUri().find("jackodio") != std::string::npos )
+    {
+    	FILE * fp;
+    	fp = fopen("/media/hdd/audioNDN.mp4", "ab");
+    	fwrite(m_buffer.data, sizeof(char), sizeof(char) * m_buffer.size, fp);
+    	fclose(fp);
+    }
+ */
+    sizeDownloaded += m_buffer.size;
+    const ndn::name::Component& finalBlockId = data.getMetaInfo().getFinalBlockId();
+      if (finalBlockId == data.getName()[-1])
+      {
+        m_isFinished = true;
+      }
+}
+
+
+void NDNConnection::onTimeout(const ndn::Interest &interest) {
+
+	//TODO What do we do on timeouts?
+ //   double now = std::chrono::duration_cast<duration_in_seconds>(std::chrono::system_clock::now() - m_start_time).count();
+/*    m_buffer.size = 0;
+    m_buffer.start_offset = 0;
+
+
+    if (!m_first && interest.getName()[-1].toSegment() == m_cid_timing_out) {
+        m_timeout_counter = (m_timeout_counter + 1) % (i_retrytimeout + 2);
+        if (m_timeout_counter > NDN_MAX_NDN_GET_TRYS) {
+            b_last = true;
+        }
+    }
+    else {
+        m_cid_timing_out = m_first ? 0 : interest.getName()[-1].toSegment();
+        m_timeout_counter = 1;
+        if (m_timeout_counter > NDN_MAX_NDN_GET_TRYS) {
+        	Debug("Abort, abort\n\n");
+            b_last = true;
+        }
+    }
+*/
+}
+
+int NDNConnection::Read(uint8_t *data, size_t len, IChunk *chunk) {
+    uint64_t start_offset = 0;
+    double delay;
+
+    while (true) {
+        if (m_isFinished)
+        {
+        	delay = std::chrono::duration_cast<duration_in_seconds>(std::chrono::system_clock::now() - m_start_time).count();
+        	speed = (double) (sizeDownloaded / delay);
+        	cumulativeBytesReceived += sizeDownloaded;
+        	L("NDN_Connection:\tFINISHED DOWNLOADING %s, Average_DL: %f, size: %lu, cumulative: %lu\n", m_name.c_str(), speed, sizeDownloaded, cumulativeBytesReceived);
+            return 0;
+        }
+
+        doFetch();
+
+        try {
+            m_face.processEvents();
+        } catch (...) {
+            std::cerr << "Unexpected exception during the fetching, diagnostic informations:\n" <<
+            boost::current_exception_diagnostic_information();
+
+            return 0;
+        }
+
+        if (m_buffer.size <= 0) {
+            i_missed_co++;
+            //i_missed_co is the number of timeouts we have during the DL of one chunk
+            continue;
+        }
+
+       // delay = std::chrono::duration_cast<duration_in_seconds>(std::chrono::system_clock::now() - m_last_fetch).count();
+
+        memcpy(data, m_buffer.data, m_buffer.size);
+        if (m_buffer.size > 0) {
+            return m_buffer.size;
+        }
+    }
+}
+
+double NDNConnection::GetAverageDownloadingSpeed()
+{
+	Debug("NDNConnection:	DL speed is %f\n", this->speed);
+	return this->speed;
+}
+
+const std::vector<ITCPConnection *> &NDNConnection::GetTCPConnectionList() const {
+    return tcpConnections;
+}
+
+
+const std::vector<IHTTPTransaction *> &NDNConnection::GetHTTPTransactionList() const {
+    return httpTransactions;
+}

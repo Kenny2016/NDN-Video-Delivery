@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Debug/qrc_qtsampleplayer.cpp">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Debug/qrc_qtsampleplayer.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Debug/qtsampleplayer_automoc.cpp">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Debug/qtsampleplayer_automoc.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/MinSizeRel/qrc_qtsampleplayer.cpp">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/MinSizeRel/qrc_qtsampleplayer.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/MinSizeRel/qtsampleplayer_automoc.cpp">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/MinSizeRel/qtsampleplayer_automoc.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/RelWithDebInfo/qrc_qtsampleplayer.cpp">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/RelWithDebInfo/qrc_qtsampleplayer.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/RelWithDebInfo/qtsampleplayer_automoc.cpp">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/RelWithDebInfo/qtsampleplayer_automoc.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Release/qrc_qtsampleplayer.cpp">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Release/qrc_qtsampleplayer.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Release/qtsampleplayer_automoc.cpp">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Release/qtsampleplayer_automoc.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Managers/MultimediaManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Managers/MultimediaManager.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Managers/MultimediaStream.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Managers/MultimediaStream.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FindLibAV.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/qtsampleplayer.ui" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Renderer/QTGLRenderer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Renderer/QTAudioRenderer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Renderer/QTGLRenderer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Renderer/QTAudioRenderer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/UI/DASHPlayer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/UI/QtSamplePlayerGui.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/UI/QtSamplePlayerGui.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/UI/IDASHPlayerGuiObserver.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/UI/DASHPlayer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Decoder/LibavDecoder.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Decoder/LibavDecoder.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Input/NDNConnection.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Input/DASHReceiver.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Input/DASHManager.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Input/MediaObjectDecoder.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Input/MediaObject.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Input/DASHManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Input/MediaObjectDecoder.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Input/MediaObject.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Input/NDNConnection.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Input/DASHReceiver.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Portable/MultiThreading.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Portable/MultiThreading.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Buffer/MediaObjectBuffer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Buffer/AudioChunk.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Buffer/MediaObjectBuffer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Buffer/AudioChunk.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Adaptation/AlwaysLowestLogic.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Adaptation/ManualAdaptation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Adaptation/AbstractAdaptationLogic.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Adaptation/AdaptationLogicFactory.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Adaptation/AdaptationLogicFactory.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Adaptation/AbstractAdaptationLogic.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Adaptation/AlwaysLowestLogic.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/Adaptation/ManualAdaptation.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/BaseUrlResolver.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/RepresentationStreamFactory.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/SegmentTemplateStream.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/AdaptationSetStream.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/TimeResolver.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/RepresentationStreamFactory.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/SingleMediaSegmentStream.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/TimeResolver.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/AdaptationSetHelper.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/AdaptationSetHelper.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/AbstractRepresentationStream.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/SegmentListStream.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/BaseUrlResolver.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/AbstractRepresentationStream.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/SegmentListStream.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/AdaptationSetStream.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/SegmentTemplateStream.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdashframework/MPD/SingleMediaSegmentStream.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/qtsampleplayer.qrc" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Header Search Paths">
+        <CLASSES>
+          <root url="file:///usr/include" />
+          <root url="file:///usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+          <root url="file:///usr/local/include" />
+          <root url="file://$MODULE_DIR$/../libdash/include" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Release" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Debug" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/RelWithDebInfo" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/MinSizeRel" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file:///usr/include" />
+          <root url="file:///usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+          <root url="file:///usr/local/include" />
+          <root url="file://$MODULE_DIR$/../libdash/include" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Release" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Debug" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/RelWithDebInfo" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/MinSizeRel" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Release/qrc_qtsampleplayer.cpp" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Release/qtsampleplayer_automoc.cpp" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Debug/qrc_qtsampleplayer.cpp" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/Debug/qtsampleplayer_automoc.cpp" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/RelWithDebInfo/qrc_qtsampleplayer.cpp" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/RelWithDebInfo/qtsampleplayer_automoc.cpp" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/MinSizeRel/qrc_qtsampleplayer.cpp" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/qtsampleplayer-10c70ca7/10c70ca7/MinSizeRel/qtsampleplayer_automoc.cpp" />
+        </excluded>
+      </library>
+    </orderEntry>
+  </component>
+</module>

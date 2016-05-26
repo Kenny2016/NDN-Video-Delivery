@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Dash.js Rocks</title>
+        <style>
+            video {
+                width: 1280px;
+                height: 480px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <video id="videoPlayer" controls></video>
+        </div>
+        <script src="../dist/dash.all.debug.js"></script>
+        <script>
+            (function(){
+                var url = "ndn:///dash264/TestCases/1a/netflix/NDN.mpd";
+                //var url = "http://dash.edgesuite.net/dash264/TestCases/1a/netflix/HTTP.mpd";
+                var player = dashjs.MediaPlayer().create();
+                player.initialize(document.querySelector("#videoPlayer"), url, true);
+            })();
+        </script>
+    </body>
+</html>
+

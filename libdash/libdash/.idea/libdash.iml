@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash_networkpart_test/libdash_networkpart_test.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash_networkpart_test/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash_networkpart_test/TestChunk.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash_networkpart_test/PersistentHTTPConnection.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash_networkpart_test/TestChunk.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash_networkpart_test/HTTPConnection.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash_networkpart_test/HTTPChunk.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash_networkpart_test/PersistentHTTPConnection.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash_networkpart_test/HTTPConnection.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash_networkpart_test/HTTPChunk.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/libdash.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/BaseUrl.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Representation.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Metrics.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Subset.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/SubRepresentation.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/AdaptationSet.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/ContentComponent.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/ProgramInformation.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/RepresentationBase.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Descriptor.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Period.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Subset.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/SegmentURL.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/SegmentBase.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Timeline.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/SegmentTemplate.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/SegmentTimeline.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/RepresentationBase.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Range.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/MultipleSegmentBase.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Segment.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/ContentComponent.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/SegmentList.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Timeline.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/URLType.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/BaseUrl.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/SegmentBase.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/MPD.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/ProgramInformation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/SegmentList.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/AbstractMPDElement.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/MultipleSegmentBase.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Range.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/URLType.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/SegmentTemplate.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Descriptor.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Segment.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/MPD.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/SegmentURL.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/SegmentTimeline.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Representation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Period.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/AdaptationSet.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/AbstractMPDElement.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/Metrics.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/mpd/SubRepresentation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/portable/MultiThreading.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/portable/MultiThreading.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/network/AbstractChunk.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/network/DownloadStateManager.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/network/AbstractChunk.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/network/DownloadStateManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/helpers/Path.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/helpers/BlockStream.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/helpers/BlockStream.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/helpers/String.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/helpers/String.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/helpers/SyncedBlockStream.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/helpers/Time.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/helpers/SyncedBlockStream.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/helpers/Time.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/helpers/Path.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/metrics/ThroughputMeasurement.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/metrics/TCPConnection.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/metrics/HTTPTransaction.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/metrics/TCPConnection.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/metrics/ThroughputMeasurement.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/metrics/HTTPTransaction.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/manager/DASHManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/manager/DASHManager.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/xml/DOMParser.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/xml/Node.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/xml/DOMHelper.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/xml/DOMHelper.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/xml/DOMParser.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/xml/Node.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libdash/source/dllmain.cpp" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Header Search Paths">
+        <CLASSES>
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+          <root url="file:///usr/include" />
+          <root url="file:///usr/local/include" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+          <root url="file:///usr/include" />
+          <root url="file:///usr/local/include" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
